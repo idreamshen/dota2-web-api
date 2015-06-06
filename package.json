@@ -1,0 +1,22 @@
+{
+  "name": "dota2-web-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idreamshen/dota2-web-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idreamshen/dota2-web-api/issues"
+  },
+  "homepage": "https://github.com/idreamshen/dota2-web-api",
+  "dependencies": {
+    "request": "^2.57.0"
+  }
+}

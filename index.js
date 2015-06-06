@@ -1,9 +1,9 @@
 var querystring = require('querystring');
 var request = require('./lib/request');
 
-function Dota2WebApi (apiUrl ,apiKey) {
-  this.url = apiUrl || 'http://api.steampowered.com/';
-  this.apiKey = apiKey;
+function Dota2WebApi (options) {
+  this.url = options.apiUrl || 'http://api.steampowered.com/';
+  this.apiKey = options.apiKey;
 }
 
 Dota2WebApi.prototype._request = function (method, params) {
@@ -28,7 +28,7 @@ Dota2WebApi.prototype.getPlayerItems = function (steamID) {
   });
 };
 
-Dota2WebApi.prototype.getHeros = function (language, itemizedonly) {
+Dota2WebApi.prototype.getHeroes = function (language, itemizedonly) {
   var method = 'IEconDOTA2_570/GetHeroes/v1/';
   return this._request(method, {
     itemizedonly: itemizedonly

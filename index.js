@@ -1,3 +1,4 @@
+var querystring = require('querystring');
 var request = require('./lib/request');
 
 function Dota2WebApi (apiUrl ,apiKey) {

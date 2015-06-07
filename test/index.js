@@ -1,7 +1,7 @@
 var Dota2WebApi = require('../');
 
 var api = new Dota2WebApi({
-  apiKey: ''
+  apiKey: process.env.APIKEY
 });
 
 api.getHeroes().then(function (heroes) {

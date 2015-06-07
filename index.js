@@ -8,36 +8,37 @@ function Dota2WebApi (options) {
 
 Dota2WebApi.prototype._request = function (method, params) {
   var url = this.url + method + '?key=' + this.apiKey + '&' + querystring.stringify(params);
-  return request({
-    url: url,
-    json: true
-  });
+  return request({url: url, json: true});
 };
 
-Dota2WebApi.prototype.getRarities = function (language) {
+Dota2WebApi.prototype.getRarities = function (options) {
   var method = 'IEconDOTA2_570/GetRarities/v1';
-  return this._request(method, {
-    language: language
-  });
+  return this._request(method, options);
 };
 
-Dota2WebApi.prototype.getPlayerItems = function (steamID) {
+Dota2WebApi.prototype.getPlayerItems = function (options) {
   var method = 'IEconItems_570/GetPlayerItems/v1';
-  return this._request(method, {
-    steamid: steamID
-  });
+  return this._request(method, options);
 };
 
-Dota2WebApi.prototype.getHeroes = function (language, itemizedonly) {
+Dota2WebApi.prototype.getHeroes = function (options) {
   var method = 'IEconDOTA2_570/GetHeroes/v1/';
-  return this._request(method, {
-    itemizedonly: itemizedonly
-  });
+  return this._request(method, options);
 };
 
-Dota2WebApi.prototype.getSchemaUrl = function () {
+Dota2WebApi.prototype.getSchemaUrl = function (options) {
   var method = 'IEconItems_570/GetSchemaURL/v1';
-  return this._request(method);
+  return this._request(method, options);
+};
+
+Dota2WebApi.prototype.getAssetClassInfo = function (options) {
+  var method = 'ISteamEconomy/GetAssetClassInfo/v1/';
+  return this._request(method, options);
+};
+
+Dota2WebApi.prototype.getAssetPrices = function (options) {
+  var method = 'ISteamEconomy/GetAssetPrices/v1/';
+  return this._request(method, options);
 };
 
 module.exports = Dota2WebApi;
